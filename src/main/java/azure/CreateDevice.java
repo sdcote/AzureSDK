@@ -20,7 +20,8 @@ import com.microsoft.azure.iot.service.sdk.RegistryManager;
 
 
 /**
- * 
+ * Device id: george
+ * Device key: 6LdAO46ea+1oYydWj2ZSoA==
  */
 public class CreateDevice {
   private static final String connectionString = "HostName=CoyoteIoT.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=XXXXXXXX";
