@@ -27,14 +27,21 @@ repositories {
 
 
 ext {
-	azureVersion = '1.0.7'
+	azureIotServiceVersion = '1.0.7'
+	azureEventHubVersion= '0.7.1'
+	azureIotDeviceVersion = '1.0.8'
 	junitVersion = '4.12'
 }
 dependencies {
 
 	// The Microsoft Azure SDK
-	compile "com.microsoft.azure.iothub-java-client:iothub-java-service-client:$azureVersion"
-	
+	// Web Service Client: Gson, Proton, IoTHub service, javax.json
+	compile "com.microsoft.azure.iothub-java-client:iothub-java-service-client:$azureIotServiceVersion"
+	// EventHubs, bouncycastle
+	compile "com.microsoft.azure:azure-eventhubs:$azureEventHubVersion"
+	// AMQP,Paho MQTT
+	compile "com.microsoft.azure.iothub-java-client:iothub-java-device-client:$azureIotDeviceVersion"
+	         
 	// UnitTesting
 	testCompile "junit:junit:$junitVersion"	
 
