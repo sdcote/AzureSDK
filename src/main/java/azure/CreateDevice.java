@@ -20,12 +20,11 @@ import com.microsoft.azure.iot.service.sdk.RegistryManager;
 
 
 /**
- * Device id: george
- * Device key: 6LdAO46ea+1oYydWj2ZSoA==
+ * 
  */
 public class CreateDevice {
-  private static final String connectionString = "HostName=CoyoteIoT.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=XXXXXXXX";
-  private static final String deviceId = "george";
+  private static final String connectionString = "HostName=CoyoteIoT.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=xxxxx";
+  private static final String deviceId = "device-fcbd127a";
 
 
 
@@ -33,9 +32,7 @@ public class CreateDevice {
   /**
    * 
    */
-  public CreateDevice() {
-    // TODO Auto-generated constructor stub
-  }
+  public CreateDevice() {}
 
 
 
@@ -49,15 +46,22 @@ public class CreateDevice {
     Device device = Device.createFromId( deviceId, null, null );
     try {
       device = registryManager.addDevice( device );
+      if ( device != null ) {
+        System.out.println( "New device has been created" );
+      }
     } catch ( IotHubException iote ) {
       try {
         device = registryManager.getDevice( deviceId );
+        if ( device != null ) {
+          System.out.println( "Device already exists" );
+        }
       } catch ( IotHubException iotf ) {
         iotf.printStackTrace();
       }
     }
-    System.out.println( "Device id: " + device.getDeviceId() );
-    System.out.println( "Device key: " + device.getPrimaryKey() );
+    System.out.println( "DeviceId: " + device.getDeviceId() );
+    System.out.println( "PrimaryKey: " + device.getPrimaryKey() );
+    System.out.println( "SecondaryKey: " + device.getSecondaryKey() );
   }
 
 }
