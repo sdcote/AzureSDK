@@ -1,4 +1,6 @@
-package org.eclipse.paho.client.mqttv3;
+package testorg.eclipse.paho.client.mqttv3;
+
+import org.eclipse.paho.client.mqttv3.MqttException;
 
 /**
  * Used to intercept the setting made by the SDK when using Paho.

@@ -1,4 +1,4 @@
-package org.eclipse.paho.client.mqttv3;
+package testorg.eclipse.paho.client.mqttv3;
 
 /**
  * Used to intercept the setting made by the SDK when using Paho.
@@ -6,6 +6,9 @@ package org.eclipse.paho.client.mqttv3;
  * classes to the main code directory. The SDK will load these instead of the 
  * Paho classes and provide you the ability to see what the SDK sets.
  */
-public interface MqttClientPersistence {
+public class MemoryPersistence {
+
+  public MemoryPersistence() {
+  }
 
 }
